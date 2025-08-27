@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secret Message</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .card {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      text-align: center;
+      max-width: 500px;
+    }
+    input {
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      margin-top: 10px;
+      width: 80%;
+      text-align: center;
+    }
+    button {
+      margin-top: 15px;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 6px;
+      background: #38bdf8;
+      color: #0f172a;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #message {
+      display: none;
+      margin-top: 20px;
+    }
+    .quote {
+      margin-top: 15px;
+      font-style: italic;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>🔒 Untuk membuka pesan, silahkan jawab pertanyaan dibawah:</h2>
+    <p>Fase pertama dari Ethical Hacking adalah?</p>
+    <input type="password" id="password" placeholder="Enter password">
+    <button onclick="checkPassword()">Unlock</button>
+
+    <div id="message">
+      <h3>🎉 Selamat!</h3>
+      <p>Kamu sudah menyelesaikan teknik ketiga dari Ethical Hacking 🚀</p>
+      <p>Tugas kamu sekarang: <b>ISTIRAHAT 😴</b></p>
+      <div class="quote">“Di tengah kesibukan, istirahat juga adalah bagian dari produktivitas.”</div>
+      <p>Sampai bertemu di pertemuan selanjutnya!</p>
+      <p>- M.A.P -</p>
+    </div>
+  </div>
+
+  <script>
+    const staticPassword = "Reconnaissance";
+
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      if (input === staticPassword) {
+        document.getElementById("message").style.display = "block";
+      } else {
+        alert("❌ Password salah, coba lagi!");
+      }
+    }
+  </script>
+</body>
+</html>
